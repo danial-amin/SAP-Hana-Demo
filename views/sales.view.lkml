@@ -30,11 +30,11 @@ view: sales {
     sql: ${TABLE}."IsCompanyOrPrivate" ;;
   }
 
-  dimension: bill_to_or_pay_to_country {
+  dimension: countryname {
     type: string
-    sql: ${TABLE}."BillToOrPayToCountry" ;;
-  }
-
+    map_layer_name: countries
+    sql: ${TABLE}."CountryName" ;;
+    }
   dimension: fiscal_year {
     type: number
     sql: ${TABLE}."FiscalYear" ;;
@@ -100,7 +100,7 @@ view: sales {
       business_partner_name,
       industry_name,
       is_company_or_private,
-      bill_to_or_pay_to_country,
+      countryname,
       fiscal_year,
       period_start2_time,
       period_end2_time,
