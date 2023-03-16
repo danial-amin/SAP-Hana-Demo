@@ -403,8 +403,8 @@
   - type: button
     name: button_35
     rich_content_json: '{"text":"Finance","description":"","newTab":false,"alignment":"center","size":"medium","style":"FILLED","color":"#1A73E8","href":"https://abacusbi.cloud.looker.com/dashboards/1?Item%20Group="}'
-    row: 1
-    col: 10
+    row: 0
+    col: 12
     width: 4
     height: 1
   - type: button
