@@ -1,10 +1,12 @@
 view: sales {
   derived_table: {
-    sql: SELECT b."BusinessPartnerName",b."IndustryName",b."IsCompanyOrPrivate",b."BillToOrPayToCountry",f."FiscalYear",f."PeriodStart2",f."PeriodEnd2",s."PostingDate",s."DueDate",s."DocumentStatus",s."CancellationStatus",s."ShipToCountry",s."GrossProfitLC",s."GrossProfitSC",s."NetSalesAmountLC",s."NetSalesAmountSC" FROM "_SYS_BIC"."sap.sbodemoau.ar.case/SalesAnalysisFact" s
+    sql: SELECT b."BusinessPartnerName",b."IndustryName",b."IsCompanyOrPrivate",c."CountryName",f."FiscalYear",f."PeriodStart2",f."PeriodEnd2",s."PostingDate",s."DueDate",s."DocumentStatus",s."CancellationStatus",s."ShipToCountry",s."GrossProfitLC",s."GrossProfitSC",s."NetSalesAmountLC",s."NetSalesAmountSC" FROM "_SYS_BIC"."sap.sbodemoau.ar.case/SalesAnalysisFact" s
       JOIN "_SYS_BIC"."sap.sbodemoau.adm/FinancialPeriod" f ON
       f."FinancialPeriodInternalKey"=s."FinancialPeriodInternalKey"
       JOIN "_SYS_BIC"."sap.sbodemoau.adm/BusinessPartner" b
       ON b."BusinessPartnerCode"=s."BusinessPartnerCode"
+      JOIN "_SYS_BIC"."sap.sbodemoau.adm/Country" c
+      ON b."BillToOrPayToCountry"=c."CountryCode"
        ;;
   }
 
