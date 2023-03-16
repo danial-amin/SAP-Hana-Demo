@@ -5,6 +5,10 @@
   description: ''
   refresh: 1 hour
   preferred_slug: BQjgDduIsjd7GuP8OwSGDw
+  embed_style:
+  background_color: "FEFAEO"
+  show_title: true
+  show_filters_bar: true
   elements:
   - title: Top 5 Most Selling Products
     name: Top 5 Most Selling Products
