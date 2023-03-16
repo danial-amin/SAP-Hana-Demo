@@ -1,5 +1,5 @@
 - dashboard: oec_computers_australia
-  title: OEC Computers Australia
+  title: OEC Computers Australia/New York
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
