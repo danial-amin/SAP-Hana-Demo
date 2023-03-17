@@ -10,3 +10,4 @@ persist_with: sap_default_datagroup
 
 explore: sql_runner_query {}
 explore: sales {}
+explore: item_sales {}
