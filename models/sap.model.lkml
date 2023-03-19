@@ -12,3 +12,4 @@ explore: sql_runner_query {}
 explore: sales {}
 explore: item_sales {}
 explore: accounts {}
+explore: opportunities {}
