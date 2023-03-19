@@ -63,6 +63,11 @@ view: accounts {
     sql: ${TABLE}."ParentAccountName" ;;
   }
 
+  dimension: duration {
+    type: date_time
+    sql:DATEDIFF(${period_start2_date},${period_end2_date})  ;;
+  }
+
   set: detail {
     fields: [
       account_code,
