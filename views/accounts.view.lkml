@@ -78,6 +78,7 @@ view: accounts {
       period_end2_time,
       amount_lc,
       amount_sc,
+      duration,
       account_name,
       parent_account_name
     ]
