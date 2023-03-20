@@ -16,3 +16,4 @@ explore: opportunities {}
 explore: sales_items_list {}
 explore: so_fct {}
 explore: po_fct {}
+explore: vendor_aging {}
