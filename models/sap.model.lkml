@@ -17,4 +17,4 @@ explore: sales_items_list {}
 explore: so_fct {}
 explore: po_fct {}
 explore: vendor_aging {}
-explore: receivable_ageing {}
+explore: rec_ageing {}

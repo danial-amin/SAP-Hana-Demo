@@ -1,7 +1,10 @@
-view: receivable_ageing {
+view: rec_ageing {
   derived_table: {
-    sql: SELECT * FROM "_SYS_BIC"."sap.sbodemoau.ar.case/CustomerReceivableAgingFact"
-      ;;
+    sql: SELECT va.* ,bp."BusinessPartnerName",bp."IndustryName",bp."MailCountry",bp."IsCompanyOrPrivate"
+      FROM "_SYS_BIC"."sap.sbodemoau.ar.case/CustomerReceivableAgingFact" va
+      JOIN "_SYS_BIC"."sap.sbodemoau.adm/BusinessPartner" bp
+      ON bp."BusinessPartnerCode"=va."BusinessPartnerCode"
+       ;;
   }
 
   measure: count {
@@ -109,6 +112,26 @@ view: receivable_ageing {
     sql: ${TABLE}."OverdueLC" ;;
   }
 
+  dimension: business_partner_name {
+    type: string
+    sql: ${TABLE}."BusinessPartnerName" ;;
+  }
+
+  dimension: industry_name {
+    type: string
+    sql: ${TABLE}."IndustryName" ;;
+  }
+
+  dimension: mail_country {
+    type: string
+    sql: ${TABLE}."MailCountry" ;;
+  }
+
+  dimension: is_company_or_private {
+    type: string
+    sql: ${TABLE}."IsCompanyOrPrivate" ;;
+  }
+
   set: detail {
     fields: [
       posting_date_time,
@@ -130,7 +153,11 @@ view: receivable_ageing {
       future_remit_lc,
       original_amount_lc,
       aging_balance_due_lc,
-      overdue_lc
+      overdue_lc,
+      business_partner_name,
+      industry_name,
+      mail_country,
+      is_company_or_private
     ]
   }
 }
