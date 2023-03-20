@@ -14,3 +14,5 @@ explore: item_sales {}
 explore: accounts {}
 explore: opportunities {}
 explore: sales_items_list {}
+explore: so_fct {}
+explore: po_fct {}
