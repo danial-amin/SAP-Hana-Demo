@@ -13,3 +13,4 @@ explore: sales {}
 explore: item_sales {}
 explore: accounts {}
 explore: opportunities {}
+explore: sales_items_list {}
