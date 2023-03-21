@@ -11,9 +11,23 @@ view: salesorderdetails {
 
   measure: count {
     type: count
-    drill_fields: [detail*]
+    drill_fields: [country_name,document_date_date,business_partner_name,item_group,item_description]
   }
-
+  measure: sum_profits {
+    type: sum
+    sql: ${gross_profit_lc} ;;
+    drill_fields: [country_name,document_date_date,business_partner_name,item_group,item_description]
+  }
+  measure: sum_sales {
+    type: sum
+    sql: ${line_total_amount_lc} ;;
+    drill_fields: [country_name,document_date_date,business_partner_name,item_group,item_description]
+  }
+  measure: gross_profit_margin{
+    type: number
+    sql: ${sum_profits}/${sum_sales} ;;
+    drill_fields: [country_name,document_date_date,business_partner_name,item_group,item_description]
+  }
   dimension: document_number {
     type: number
     sql: ${TABLE}."DocumentNumber" ;;
@@ -332,6 +346,7 @@ view: salesorderdetails {
   dimension: item_description_and_code {
     type: string
     sql: ${TABLE}."ItemDescriptionAndCode" ;;
+    drill_fields: [country_name,document_date_date,business_partner_name,item_group]
   }
 
   dimension: item_group {
@@ -541,8 +556,11 @@ view: salesorderdetails {
 
   dimension: country_name {
     type: string
+    map_layer_name: countries
     sql: ${TABLE}."CountryName" ;;
+    drill_fields: [country_name,document_date_date,business_partner_name,item_group]
   }
+
 
   set: detail {
     fields: [
