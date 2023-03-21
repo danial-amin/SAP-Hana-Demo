@@ -34,6 +34,7 @@ view: sales {
     type: string
     map_layer_name: countries
     sql: ${TABLE}."CountryName" ;;
+    drill_fields: [detail*]
     }
   dimension: fiscal_year {
     type: number
@@ -53,6 +54,7 @@ view: sales {
   dimension_group: posting_date {
     type: time
     sql: ${TABLE}."PostingDate" ;;
+    drill_fields: [detail*]
   }
 
   dimension_group: due_date {
@@ -78,6 +80,7 @@ view: sales {
   dimension: gross_profit_lc {
     type: number
     sql: ${TABLE}."GrossProfitLC" ;;
+    drill_fields: [detail*]
   }
 
   dimension: gross_profit_sc {
@@ -88,11 +91,13 @@ view: sales {
   dimension: net_sales_amount_lc {
     type: number
     sql: ${TABLE}."NetSalesAmountLC" ;;
+    drill_fields: [detail*]
   }
 
   dimension: net_sales_amount_sc {
     type: number
     sql: ${TABLE}."NetSalesAmountSC" ;;
+    drill_fields: [detail*]
   }
 
   set: detail {
