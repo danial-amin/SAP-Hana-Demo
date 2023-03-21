@@ -21,7 +21,7 @@ view: sales_all {
 
   measure: profit_total {
     type: sum
-    sql: ${grossprofit} ;;
+    sql: ${grossbuypr} ;;
     drill_fields: [docdate,country_name,itemname]
   }
 
