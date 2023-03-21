@@ -63,9 +63,9 @@
     limit: 500
     dynamic_fields: [{measure: sum_of_gross_profit_lc, based_on: sales.gross_profit_lc,
         expression: '', label: Sum of Gross Profit Lc, type: sum, _kind_hint: measure,
-        _type_hint: number,drill_fields:[*details]}, {measure: sum_of_net_sales_amount_lc, based_on: sales.net_sales_amount_lc,
+        _type_hint: number,drill_fields:[detail*]}, {measure: sum_of_net_sales_amount_lc, based_on: sales.net_sales_amount_lc,
         expression: '', label: Sum of Net Sales Amount Lc, type: sum, _kind_hint: measure,
-        _type_hint: number,drill_fields:[*details]}]
+        _type_hint: number,drill_fields:[detail*]}]
     hidden_fields: [sum_of_gross_profit_lc]
     hidden_points_if_no: []
     series_labels: {}

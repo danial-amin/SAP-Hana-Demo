@@ -14,6 +14,11 @@ view: sales {
     type: count
     drill_fields: [detail*]
   }
+  measure: sum_gross_profit {
+    type: sum
+    sql: ${gross_profit_lc} ;;
+    drill_fields: [detail*]
+  }
 
   dimension: business_partner_name {
     type: string
@@ -34,7 +39,7 @@ view: sales {
     type: string
     map_layer_name: countries
     sql: ${TABLE}."CountryName" ;;
-    drill_fields: [detail*]
+    drill_fields: [period_start2_date,business_partner_name,count]
     }
   dimension: fiscal_year {
     type: number
@@ -54,7 +59,7 @@ view: sales {
   dimension_group: posting_date {
     type: time
     sql: ${TABLE}."PostingDate" ;;
-    drill_fields: [detail*]
+    drill_fields: [period_start2_date,business_partner_name,count]
   }
 
   dimension_group: due_date {
@@ -80,7 +85,7 @@ view: sales {
   dimension: gross_profit_lc {
     type: number
     sql: ${TABLE}."GrossProfitLC" ;;
-    drill_fields: [detail*]
+    drill_fields: [period_start2_date,business_partner_name,count]
   }
 
   dimension: gross_profit_sc {
