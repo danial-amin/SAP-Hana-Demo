@@ -20,3 +20,4 @@ explore: vendor_aging {}
 explore: rec_ageing {}
 explore: on_time_delivery {}
 explore: budget_analysis {}
+explore: sales_all {}
