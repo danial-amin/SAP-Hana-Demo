@@ -16,13 +16,13 @@ view: sales_all {
   measure: sales_total {
     type: sum
     sql: ${linetotal} ;;
-    drill_fields: [docdate,country_name]
+    drill_fields: [docdate,country_name,itemname]
   }
 
   measure: profit_total {
     type: sum
     sql: ${grossprofit} ;;
-    drill_fields: [docdate,country_name]
+    drill_fields: [docdate,country_name,itemname]
   }
 
   measure: gross_profit_margin {
@@ -49,6 +49,7 @@ view: sales_all {
     type: string
     map_layer_name: countries
     sql: ${TABLE}."CountryName" ;;
+    drill_fields: [docdate,itemname,business_partner_name]
   }
 
   dimension: doctype {
