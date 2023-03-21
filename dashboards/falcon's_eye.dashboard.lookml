@@ -59,7 +59,7 @@
     model: sap
     explore: sales
     type: marketplace_viz_radial_gauge::radial_gauge-marketplace
-    fields: [sum_of_gross_profit_lc, sum_of_net_sales_amount_lc]
+    fields: [sales.sum_gross_profit]
     limit: 500
     dynamic_fields: [{measure: sum_of_gross_profit_lc, based_on: sales.gross_profit_lc,
         expression: '', label: Sum of Gross Profit Lc, type: sum, _kind_hint: measure,
