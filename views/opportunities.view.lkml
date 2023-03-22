@@ -40,7 +40,7 @@ view: opportunities {
 
   measure: potential_gross_profit {
     type: number
-    sql:  (${sum_gross}*(MAX(${closing_percentage})/100)/${sum_weighted})*100;;
+    sql:  round((${sum_gross}*(max(${closing_percentage})/100))/${sum_value}*100,2);;
     drill_fields: [latest_stage_name,days_stay_in_pipeline,potential_amount_lc,weighted_amount_sc,gross_profit_margin]
   }
 
