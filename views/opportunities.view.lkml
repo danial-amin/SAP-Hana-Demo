@@ -11,7 +11,25 @@ view: opportunities {
 
   measure: count {
     type: count
-    drill_fields: [detail*]
+    drill_fields: [latest_stage_name,days_stay_in_pipeline,potential_amount_lc,weighted_amount_sc,gross_profit_margin]
+  }
+
+  measure: sum_gross {
+    type: sum
+    sql:  ${gross_profit_margin};;
+    drill_fields: [latest_stage_name,days_stay_in_pipeline,potential_amount_lc,weighted_amount_sc,gross_profit_margin]
+  }
+
+  measure: sum_weighted {
+    type: sum
+    sql:  ${weighted_amount_lc};;
+    drill_fields: [latest_stage_name,days_stay_in_pipeline,potential_amount_lc,weighted_amount_sc,gross_profit_margin]
+  }
+
+  measure: sum_days {
+    type: sum
+    sql:  ${days_stay_in_pipeline};;
+    drill_fields: [latest_stage_name,days_stay_in_pipeline,potential_amount_lc,weighted_amount_sc,gross_profit_margin]
   }
 
   dimension: sales_employee_or_buyer_name {
