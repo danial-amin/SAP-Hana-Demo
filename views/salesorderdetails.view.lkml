@@ -11,22 +11,22 @@ view: salesorderdetails {
 
   measure: count {
     type: count
-    drill_fields: [country_name,document_date_date,business_partner_name,item_group,item_description,count]
+    drill_fields: [country_name,business_partner_name,count]
   }
   measure: sum_profits {
     type: sum
     sql: ${gross_profit_lc} ;;
-    drill_fields: [country_name,document_date_date,business_partner_name,item_group,item_description,gross_profit_lc]
+    drill_fields: [country_name,business_partner_name,count]
   }
   measure: sum_sales {
     type: sum
     sql: ${line_total_amount_lc} ;;
-    drill_fields: [country_name,document_date_date,business_partner_name,item_group,item_description,sum_sales]
+    drill_fields: [country_name,business_partner_name,count]
   }
   measure: gross_profit_margin{
     type: number
     sql: ${sum_profits}/${sum_sales} ;;
-    drill_fields: [country_name,document_date_date,business_partner_name,item_group,item_description,gross_profit_margin]
+    drill_fields: [country_name,business_partner_name,count]
   }
   dimension: document_number {
     type: number
