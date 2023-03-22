@@ -20,6 +20,12 @@ view: opportunities {
     drill_fields: [latest_stage_name,days_stay_in_pipeline,potential_amount_lc,weighted_amount_sc,gross_profit_margin]
   }
 
+  measure: sum_value {
+    type: sum
+    sql:  ${potential_amount_lc};;
+    drill_fields: [latest_stage_name,days_stay_in_pipeline,potential_amount_lc,weighted_amount_sc,gross_profit_margin]
+  }
+
   measure: sum_weighted {
     type: sum
     sql:  ${weighted_amount_lc};;
@@ -27,8 +33,14 @@ view: opportunities {
   }
 
   measure: sum_days {
-    type: sum
+    type: average
     sql:  ${days_stay_in_pipeline};;
+    drill_fields: [latest_stage_name,days_stay_in_pipeline,potential_amount_lc,weighted_amount_sc,gross_profit_margin]
+  }
+
+  measure: potential_gross_profit {
+    type: number
+    sql:  (${sum_gross}*(${closing_percentage}/100))/${sum_weighted})*100;;
     drill_fields: [latest_stage_name,days_stay_in_pipeline,potential_amount_lc,weighted_amount_sc,gross_profit_margin]
   }
 
