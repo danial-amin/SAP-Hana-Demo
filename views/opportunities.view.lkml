@@ -58,10 +58,6 @@ view: opportunities {
     type: number
     sql:  round(((${sum_profit}*(${max_closing}/100))/${sum_value})*100,2);;
     drill_fields: [detail*]
-    link: {
-      label: "See historical distribution"
-      url: "https://abacusbi.cloud.looker.com/looks/2"
-    }
   }
 
   dimension: sales_employee_or_buyer_name {
