@@ -59,6 +59,7 @@ view: opportunities {
   dimension: sales_employee_or_buyer_name {
     type: string
     sql: ${TABLE}."SalesEmployeeOrBuyerName" ;;
+    drill_fields: [detail*]
   }
 
   dimension: employee_department {
@@ -140,6 +141,7 @@ view: opportunities {
   dimension: latest_stage_name {
     type: string
     sql: ${TABLE}."LatestStageName" ;;
+    drill_fields: [detail*]
   }
 
   dimension: opportunity_close_reason {
