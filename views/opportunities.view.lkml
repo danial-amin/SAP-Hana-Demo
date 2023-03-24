@@ -41,7 +41,7 @@ view: opportunities {
   measure: average_days {
     type: average
     sql:  ${days_stay_in_pipeline};;
-    drill_fields: [latest_stage_name,days_stay_in_pipeline,potential_amount_lc,weighted_amount_sc,gross_profit_margin]
+    drill_fields: [detail*]
   }
 
   measure: max_closing {
