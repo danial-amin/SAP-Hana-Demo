@@ -11,13 +11,13 @@ view: opportunities {
 
   measure: count {
     type: count
-    drill_fields: [latest_stage_name,days_stay_in_pipeline,potential_amount_lc,weighted_amount_sc,gross_profit_margin]
+    drill_fields: [detail*]
   }
 
   measure: sum_gross {
     type: sum
     sql:  ${gross_profit_margin};;
-    drill_fields: [latest_stage_name,days_stay_in_pipeline,potential_amount_lc,weighted_amount_sc,gross_profit_margin]
+    drill_fields: [detail*]
   }
 
   measure: sum_profit {
