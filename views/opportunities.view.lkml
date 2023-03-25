@@ -11,7 +11,7 @@ view: opportunities {
 
   measure: count {
     type: count
-    drill_fields: [detail*]
+    drill_fields: [detail_fine_drilling*]
     link: {
       label: "See historical distribution"
       url: "https://abacusbi.cloud.looker.com/looks/2"
