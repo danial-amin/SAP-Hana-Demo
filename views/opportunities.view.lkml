@@ -21,49 +21,49 @@ view: opportunities {
   measure: sum_gross {
     type: sum
     sql:  ${gross_profit_margin};;
-    drill_fields: [detail*]
+    drill_fields: [detail_fine_drilling*]
   }
 
   measure: sum_profit {
     type: sum
     sql:  ${gross_profit_lc};;
-    drill_fields: [latest_stage_name,days_stay_in_pipeline,potential_amount_lc,weighted_amount_sc,gross_profit_margin]
+    drill_fields: [detail_fine_drilling*]
   }
 
   measure: sum_value {
     type: sum
     sql:  ${potential_amount_lc};;
-    drill_fields: [latest_stage_name,days_stay_in_pipeline,potential_amount_lc,weighted_amount_sc,gross_profit_margin]
+    drill_fields: [detail_fine_drilling*]
   }
 
   measure: sum_weighted {
     type: sum
     sql:  ${weighted_amount_lc};;
-    drill_fields: [latest_stage_name,days_stay_in_pipeline,potential_amount_lc,weighted_amount_sc,gross_profit_margin]
+    drill_fields: [detail_fine_drilling*]
   }
 
   measure: average_days {
     type: average
     sql:  ${days_stay_in_pipeline};;
-    drill_fields: [detail*]
+    drill_fields: [detail_fine_drilling*]
   }
 
   measure: max_closing {
     type: max
     sql:  ${closing_percentage};;
-    drill_fields: [detail*]
+    drill_fields: [detail_fine_drilling*]
   }
 
   measure: potential_gross_profit {
     type: number
     sql:  round(((${sum_profit}*(${max_closing}/100))/${sum_value})*100,2);;
-    drill_fields: [detail*]
+    drill_fields: [detail_fine_drilling*]
   }
 
   dimension: sales_employee_or_buyer_name {
     type: string
     sql: ${TABLE}."SalesEmployeeOrBuyerName" ;;
-    drill_fields: [detail*]
+    drill_fields: [detail_fine_drilling*]
   }
 
   dimension: employee_department {
@@ -252,5 +252,17 @@ view: opportunities {
       business_partner_type,
       business_partner_territory
     ]
+  }
+  set: detail_fine_drilling {
+    fields: [
+      opportunity_start_date_date,
+      latest_stage_name,
+      sales_employee_or_buyer_name,
+      business_partner_name,
+      sum_profit,
+      sum_value,
+      potential_gross_profit,
+    ]
+
   }
 }
