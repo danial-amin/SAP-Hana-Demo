@@ -21,3 +21,4 @@ explore: rec_ageing {}
 explore: on_time_delivery {}
 explore: budget_analysis {}
 explore: salesorderdetails {}
+explore: gl_account_list {}
