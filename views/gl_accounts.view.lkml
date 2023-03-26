@@ -59,6 +59,11 @@ view: gl_accounts {
     sql: ${TABLE}."FinancialPeriodCode" ;;
   }
 
+  dimension: financial_month {
+    type: string
+    sql: right(${TABLE}."FinancialPeriodCode",2) ;;
+  }
+
   dimension: fiscal_year {
     type: number
     sql: ${TABLE}."FiscalYear" ;;
