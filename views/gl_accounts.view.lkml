@@ -12,6 +12,17 @@ view: gl_accounts {
     drill_fields: [detail*]
   }
 
+  measure: sum_closing {
+    type: sum
+    sql: ${closing_balance_lc} ;;
+    drill_fields: [detail*]
+  }
+
+  measure: avg_closing {
+    type: average
+    sql: ${closing_balance_lc} ;;
+    drill_fields: [detail*]
+  }
   measure: sum_trans {
     type: sum
     sql: ${transaction_amount} ;;
