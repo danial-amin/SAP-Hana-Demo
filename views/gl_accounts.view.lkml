@@ -71,12 +71,12 @@ view: gl_accounts {
 
   dimension: closing_balance_lc {
     type: number
-    sql: ${TABLE}."ClosingBalanceLC" ;;
+    sql: -${TABLE}."ClosingBalanceLC" ;;
   }
 
   dimension: opening_balance_sc {
     type: number
-    sql: ${TABLE}."OpeningBalanceSC" ;;
+    sql: -${TABLE}."OpeningBalanceSC" ;;
   }
 
   dimension: closing_balance_sc {
