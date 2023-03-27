@@ -68,7 +68,7 @@ view: budget_analysis {
     sql: ${TABLE}."AccountForeignName" ;;
   }
 
-  measure: monthly_budget_amount_lc {
+  dimension: monthly_budget_amount_lc {
     type: number
     sql: ${TABLE}."MonthlyBudgetAmountLC" ;;
     drill_fields: [detail*]
