@@ -12,6 +12,11 @@ view: budget_analysis {
     type: count
     drill_fields: [detail*]
   }
+  measure: sum_amount_lc {
+    type: sum
+    sql: ${monthly_budget_amount_lc} ;;
+    drill_fields: [detail*]
+  }
 
   dimension: account_code {
     type: string
