@@ -14,6 +14,30 @@ view: sql_runner_query {
     drill_fields: [detail*]
   }
 
+  measure: sum_instock {
+    type: sum
+    sql: ${in_stock_quantity} ;;
+    drill_fields: [detail*]
+  }
+
+  measure: sum_outgoing {
+    type: sum
+    sql: ${committed_quantity} ;;
+    drill_fields: [detail*]
+  }
+
+  measure: sum_incoming {
+    type: sum
+    sql: ${ordered_quantity} ;;
+    drill_fields: [detail*]
+  }
+
+  measure: sum_inv_value {
+    type: sum
+    sql: ${in_stock_inventory_value_lc} ;;
+    drill_fields: [detail*]
+  }
+
   dimension: item_description {
     type: string
     sql: ${TABLE}."ItemDescription" ;;
